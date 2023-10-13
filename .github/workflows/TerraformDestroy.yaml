@@ -10,7 +10,8 @@ env:
 
 permissions:
   id-token: write
-
+  contents: read
+  
 jobs:
   Plan:
     runs-on: ubuntu-latest
