@@ -15,6 +15,7 @@ terraform {
     storage_account_name = "tfstate909487376"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
+    use_oidc             = true
   }
 }
 
@@ -23,6 +24,7 @@ provider "azurerm" {
   subscription_id = "77bb0b07-57e5-44b5-a350-310a93917298"
   features {}
   skip_provider_registration = true
+  use_oidc             = true
 }
 
 provider "azuread" {
