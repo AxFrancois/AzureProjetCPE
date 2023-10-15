@@ -15,18 +15,20 @@ terraform {
     storage_account_name = "tfstate909487376"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
+    use_oidc             = true
   }
 }
 
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
-  subscription_id = "77bb0b07-57e5-44b5-a350-310a93917298"
+  subscription_id = var.subscription_id
   features {}
   skip_provider_registration = true
+  use_oidc             = true
 }
 
 provider "azuread" {
-  tenant_id = "ce4775d3-1c2e-4644-b2bc-631c157d2be7"
+  tenant_id = var.tenant_id
 }
 
 resource "azurerm_resource_group" "RG_CPE" {
