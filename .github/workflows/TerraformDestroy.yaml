@@ -2,6 +2,8 @@ name: Terraform Destroy
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * *'
 
 env:
   ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"

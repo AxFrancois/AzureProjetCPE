@@ -2,7 +2,7 @@ name: Terraform Apply
 on:
   push:
     branches: [ "main" ]
-
+  workflow_dispatch:
     
 env:
   ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
