@@ -22,9 +22,9 @@ terraform {
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   subscription_id = var.subscription_id
-  features {}
   skip_provider_registration = true
-  use_oidc             = true
+  use_oidc                   = true
+  features {}
 }
 
 provider "azuread" {
