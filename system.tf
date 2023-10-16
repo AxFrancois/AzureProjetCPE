@@ -4,7 +4,7 @@ resource "azurerm_network_interface" "JumpStationVM1-NIC" {
   resource_group_name = azurerm_resource_group.RG_CPE.name
 
   ip_configuration {
-    name                          = "Primary IP"
+    name                          = "PrimaryIP"
     subnet_id                     = azurerm_subnet.System-network-1-subnet-1.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.PublicIP-1.id
@@ -59,7 +59,7 @@ resource "azurerm_network_interface" "ProductionVM1-NIC" {
   resource_group_name = azurerm_resource_group.RG_CPE.name
 
   ip_configuration {
-    name                          = "Primary IP"
+    name                          = "PrimaryIP"
     subnet_id                     = azurerm_subnet.CondidentialServices-network-1-subnet-1.id
     private_ip_address_allocation = "Dynamic"
   }

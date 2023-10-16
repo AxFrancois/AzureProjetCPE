@@ -29,11 +29,6 @@ resource "azurerm_virtual_network" "CondidentialServices-network-1" {
   resource_group_name = azurerm_resource_group.RG_CPE.name
   address_space       = ["172.16.0.0/16"]
 
-  subnet {
-    name           = "subnet1"
-    address_prefix = "172.16.0.0/16"
-  }
-
   tags = {
     environment = "CondidentialServices"
   }
