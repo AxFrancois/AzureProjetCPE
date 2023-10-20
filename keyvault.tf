@@ -26,17 +26,3 @@ resource "azurerm_key_vault" "KeyVault1" {
     ]
   }
 }
-
-resource "azurerm_key_vault_access_policy" "example" {
-  key_vault_id = azurerm_key_vault.KeyVault1.id
-  tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = data.azurerm_client_config.current.object_id
-
-  key_permissions = [
-    "Get",
-  ]
-
-  secret_permissions = [
-    "Get",
-  ]
-}
