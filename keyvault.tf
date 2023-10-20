@@ -1,5 +1,5 @@
 resource "azurerm_key_vault" "KeyVault1" {
-  name                        = "KeyVault1"
+  name                        = "KeyVault${random_string.resource_code.result}"
   location                    = azurerm_resource_group.RG_CPE.location
   resource_group_name         = azurerm_resource_group.RG_CPE.name
   enabled_for_disk_encryption = true
