@@ -6,7 +6,7 @@ resource "azurerm_network_security_group" "JumpStationSecurityGroup" {
 
 resource "azurerm_network_security_rule" "JumpStationSecurityRule-1" {
   name                        = "Allow traffic to internet"
-  priority                    = 1
+  priority                    = 101
   direction                   = "Outbound"
   access                      = "Allow"
   protocol                    = "*"
@@ -20,7 +20,7 @@ resource "azurerm_network_security_rule" "JumpStationSecurityRule-1" {
 
 resource "azurerm_network_security_rule" "JumpStationSecurityRule-2" {
   name                        = "Allow only RDP traffic from CPE network"
-  priority                    = 2
+  priority                    = 102
   direction                   = "Inbound"
   access                      = "Allow"
   protocol                    = "*"
@@ -34,7 +34,7 @@ resource "azurerm_network_security_rule" "JumpStationSecurityRule-2" {
 
 resource "azurerm_network_security_rule" "JumpStationSecurityRule-3" {
   name                        = "Allow traffic to internal network"
-  priority                    = 3
+  priority                    = 103
   direction                   = "Outbound"
   access                      = "Allow"
   protocol                    = "*"
