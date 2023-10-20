@@ -39,7 +39,7 @@ resource "azurerm_virtual_machine" "JumpStationVM1" {
   }
 
   os_profile {
-    computer_name  = "myvm1"
+    computer_name  = "JumpStationVM1"
     admin_username = "testadmin"
     admin_password = "Password1234!"
   }
@@ -93,7 +93,7 @@ resource "azurerm_virtual_machine" "ProductionVM1" {
   }
 
   os_profile {
-    computer_name  = "myvm1"
+    computer_name  = "ProductionVM1"
     admin_username = "testadmin"
     admin_password = "Password1234!"
   }
