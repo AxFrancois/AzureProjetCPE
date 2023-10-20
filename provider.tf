@@ -31,6 +31,9 @@ provider "azuread" {
   tenant_id = var.tenant_id
 }
 
+data "azurerm_client_config" "current" {
+}
+
 resource "azurerm_resource_group" "RG_CPE" {
   name     = "CPE-POC"
   location = var.region

@@ -42,3 +42,58 @@ resource "azuread_user" "AF-5" {
   company_name        = "CPE"
   department          = "Administratif"
 }
+
+resource "azuread_group" "IT" {
+  display_name = "IT"
+  security_enabled = true
+  members = [azuread_user.IT-1.id, azuread_user.IT-2.id, azuread_user.IT-3.id]
+  assignable_to_role = true
+}
+
+resource "azuread_group" "AF" {
+  display_name = "Administratif"
+  security_enabled = true
+  members = [azuread_user.AF-4.id, azuread_user.AF-5.id]
+}
+
+resource "azuread_directory_role" "GlobalAdmin"{
+  display_name = "Global Administrator"
+}
+
+resource "azuread_directory_role_assignment" "GlobalAdmin" {
+  role_id = azuread_directory_role.GlobalAdmin.template_id
+  principal_object_id = azuread_group.IT.id
+}
+
+resource "azuread_conditional_access_policy" "AdminAccessPolicy" {
+  display_name = "AdminAccessPolicy"
+  state        = "enabled"
+
+  conditions {
+    client_app_types    = ["all"]
+    sign_in_risk_levels = ["high"]
+    user_risk_levels    = ["high"]
+
+    applications {
+      included_applications = ["All"]
+      excluded_applications = []
+    }
+
+    locations {
+      included_locations = ["All"]
+    }
+
+    platforms {
+      included_platforms = ["All"]
+    }
+
+    users {
+      included_groups = [azuread_group.IT.id]
+    }
+  }
+
+  grant_controls {
+    operator          = "OR"
+    built_in_controls = ["mfa"]
+  }
+}
