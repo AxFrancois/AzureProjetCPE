@@ -86,7 +86,7 @@ resource "azurerm_virtual_machine" "ProductionVM1" {
   }
 
   storage_os_disk {
-    name              = "osdisk1"
+    name              = "osdisk2"
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"
