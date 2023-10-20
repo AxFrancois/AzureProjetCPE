@@ -46,33 +46,54 @@ resource "azuread_user" "AF-5" {
 resource "azuread_group" "IT" {
   display_name = "IT"
   security_enabled = true
+  members = [azuread_user.IT-1.id, azuread_user.IT-2.id, azuread_user.IT-3.id]
+  assignable_to_role = true
 }
 
 resource "azuread_group" "AF" {
   display_name = "Administratif"
   security_enabled = true
+  members = [azuread_user.AF-4.id, azuread_user.AF-5.id]
 }
 
-resource "azuread_group_member" "IT" {
-  group_object_id = azuread_group.IT.id
-  member_object_id = [azuread_user.IT-1.id, azuread_user.IT-2.id, azuread_user.IT-3.id]
+resource "azuread_directory_role" "GlobalAdmin"{
+  display_name = "Global Administrator"
 }
 
-resource "azuread_group_member" "AF" {
-  group_object_id = azuread_group.AF.id
-  member_object_id = [azuread_user.AF-4.id, azuread_user.AF-5.id]
+resource "azuread_directory_role_assignment" "GlobalAdmin" {
+  role_id = azuread_directory_role.GlobalAdmin.template_id
+  principal_object_id = azuread_group.IT.id
 }
 
-resource "azuread_administrative_unit" "Admin_unit" {
-  display_name = "Admin_unit"
-}
+resource "azuread_conditional_access_policy" "AdminAccessPolicy" {
+  display_name = "AdminAccessPolicy"
+  state        = "enabled"
 
-resource "azuread_directory_role" "Admin" {
-  display_name = "Administrator"
-}
+  conditions {
+    client_app_types    = ["all"]
+    sign_in_risk_levels = ["high"]
+    user_risk_levels    = ["high"]
 
-resource "azuread_administrative_unit_role_member" "Administrator" {
-  role_object_id = azuread_directory_role.Admin.object_id
-  administrative_unit_object_id = azuread_administrative_unit.Admin_unit.id
-  member_object_id = [azuread_user.IT-1.id, azuread_user.IT-2.id, azuread_user.IT-3.id]
+    applications {
+      included_applications = ["All"]
+      excluded_applications = []
+    }
+
+    locations {
+      included_locations = ["All"]
+    }
+
+    platforms {
+      included_platforms = ["All"]
+    }
+
+    users {
+      included_groups = [azuread_group.IT.id]
+    }
+  }
+
+  grant_controls {
+    operator          = "OR"
+    built_in_controls = ["mfa"]
+  }
 }
