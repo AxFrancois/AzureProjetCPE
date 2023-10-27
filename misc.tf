@@ -9,5 +9,5 @@ output "ConfidentielStorageAccountName" {
 }
 
 output "KeyVaultName" {
-  value = azurerm_key_vault.KeyVault1.name 
+  value = azurerm_key_vault.KeyVault1.name
 }
