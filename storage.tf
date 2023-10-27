@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "ConfidentielStorageAccount" {
   #public_network_access_enabled = false
 }
 
-resource "azurerm_storage_share" "CondidentialServices-share-1" {
+resource "azurerm_storage_share" "ConfidentialServices-share-1" {
   name                 = "confidentiel"
   storage_account_name = azurerm_storage_account.ConfidentielStorageAccount.name
   quota                = 250

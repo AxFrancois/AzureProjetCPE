@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="waZzFHGL37r4si0MN0PD" name="Page-1">
-        <mxGraphModel dx="1926" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="2220" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -58,7 +58,7 @@
                 <mxCell id="36" value="" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;perimeterSpacing=0;arcSize=5;fillColor=none;strokeColor=#006EAF;fontColor=#ffffff;" parent="112" vertex="1">
                     <mxGeometry width="220" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="46" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;&quot;&gt;Subnet-1&lt;br&gt;&lt;/span&gt;&lt;div style=&quot;color: rgb(212, 212, 212); line-height: 19px;&quot;&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;192.168.0.0/25&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#006EAF;fillColor=#1A1A1A;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeWidth=2;fontColor=#CE9178;arcSize=35;labelBackgroundColor=none;" parent="112" vertex="1">
+                <mxCell id="46" value="&lt;div style=&quot;font-size: 14px; line-height: 19px;&quot;&gt;&lt;span style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace;&quot;&gt;Subnet-1&lt;br&gt;&lt;/span&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Consolas, Courier New, monospace&quot;&gt;192.168.0.0/25&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#006EAF;fillColor=#1A1A1A;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeWidth=2;fontColor=#CE9178;arcSize=35;labelBackgroundColor=none;" parent="112" vertex="1">
                     <mxGeometry x="10" y="10" width="140" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="94" value="" style="endArrow=classic;html=1;fontFamily=Lucida Console;fontSize=14;fontColor=#CE9178;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="68" target="73" edge="1">
@@ -109,7 +109,7 @@
                 <mxCell id="63" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks.svg;rounded=1;strokeWidth=2;fontFamily=Lucida Console;fontColor=#CE9178;fillColor=#1A1A1A;gradientColor=none;" parent="66" vertex="1">
                     <mxGeometry width="67" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="64" value="&lt;div style=&quot;font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); line-height: 19px;&quot;&gt;&lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;CondidentialServices-network-1&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;background-color: rgb(30, 30, 30);&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;10.0.0.0/16&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#006EAF;fillColor=#1A1A1A;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeWidth=2;fontColor=#CE9178;arcSize=25;labelBackgroundColor=none;" parent="66" vertex="1">
+                <mxCell id="64" value="&lt;div style=&quot;font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); line-height: 19px;&quot;&gt;&lt;span style=&quot;color: rgb(206, 145, 120);&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;ConfidentialServices-network-1&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;span style=&quot;background-color: rgb(30, 30, 30);&quot;&gt;&lt;font face=&quot;Consolas, Courier New, monospace&quot;&gt;10.0.0.0/16&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#006EAF;fillColor=#1A1A1A;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeWidth=2;fontColor=#CE9178;arcSize=25;labelBackgroundColor=none;" parent="66" vertex="1">
                     <mxGeometry x="80" width="250" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="104" value="" style="edgeStyle=none;html=1;fontFamily=Lucida Console;fontSize=14;fontColor=#CE9178;startArrow=none;startFill=0;" parent="1" source="69" target="103" edge="1">
@@ -205,7 +205,7 @@
                 <mxCell id="109" value="&lt;div style=&quot;font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;font color=&quot;#ce9178&quot;&gt;IT&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=#001DBC;fillColor=#1A1A1A;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;strokeWidth=2;fontColor=#CE9178;arcSize=35;labelBackgroundColor=none;" parent="124" vertex="1">
                     <mxGeometry x="58" y="29.600000000000023" width="50" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="147" value="Jean Cive" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Users.svg;fontColor=#CE9178;" vertex="1" parent="124">
+                <mxCell id="147" value="Jean Cive" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/identity/Users.svg;fontColor=#CE9178;" parent="124" vertex="1">
                     <mxGeometry x="44" y="55.39999999999998" width="64" height="70" as="geometry"/>
                 </mxCell>
                 <mxCell id="133" value="Recovery vault" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/migrate/Recovery_Services_Vaults.svg;rounded=1;labelBackgroundColor=none;strokeColor=#001DBC;strokeWidth=2;fontFamily=Consolas, &quot;Courier New&quot;, monospace;fontColor=#CE9178;fillColor=#1A1A1A;gradientColor=none;" parent="1" vertex="1">
@@ -218,6 +218,11 @@
                         <Array as="points">
                             <mxPoint x="934" y="470"/>
                         </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="149" value="&lt;font color=&quot;#ce9178&quot; face=&quot;Consolas, Courier New, monospace&quot; style=&quot;font-size: 9px;&quot;&gt;Production-backup-policy&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=9;" parent="146" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1669" y="4" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="103" value="ProductionVM1" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/compute/Virtual_Machine.svg;rounded=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Lucida Console;fontColor=#CE9178;fillColor=#1A1A1A;gradientColor=none;" parent="1" vertex="1">
