@@ -2,7 +2,7 @@ resource "azurerm_storage_account" "ConfidentielStorageAccount" {
   name                     = "confidentiel${random_string.resource_code.result}"
   resource_group_name      = azurerm_resource_group.RG_CPE.name
   location                 = azurerm_resource_group.RG_CPE.location
-  account_tier             = "Premium"
+  account_tier             = "Standard"
   account_replication_type = "LRS"
   #public_network_access_enabled = false
 }
