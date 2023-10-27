@@ -1,0 +1,69 @@
+Project: AxFrancois/AzureProjetCPE
+
+ Name                                                                 Monthly Qty  Unit                      Monthly Cost 
+                                                                                                                          
+ azurerm_public_ip.PublicIP-1                                                                                             
+ └─ IP address (static)                                                       730  hours                            $2.63 
+                                                                                                                          
+ azurerm_recovery_services_vault.ConfidentialRecoveryVault                                                                
+ └─ azurerm_backup_protected_vm.ProductionVM1-backup                                                                      
+    ├─ Instance backup (under 500 GB)                                           1  month                           $10.00 
+    └─ GRS data stored                                                        128  GB                               $7.17 
+                                                                                                                          
+ azurerm_storage_account.ConfidentielStorageAccount                                                                       
+ ├─ Capacity                                                   Monthly cost depends on usage: $0.19 per GB                
+ ├─ Write operations                                           Monthly cost depends on usage: $0.0219 per 10k operations  
+ ├─ List and create container operations                       Monthly cost depends on usage: $0.0625 per 10k operations  
+ ├─ Read operations                                            Monthly cost depends on usage: $0.00175 per 10k operations 
+ └─ All other operations                                       Monthly cost depends on usage: $0.00175 per 10k operations 
+                                                                                                                          
+ azurerm_storage_share.CondidentialServices-share-1                                                                       
+ ├─ Data at rest                                               Monthly cost depends on usage: $0.075 per GB               
+ ├─ Snapshots                                                  Monthly cost depends on usage: $0.075 per GB               
+ ├─ Read operations                                            Monthly cost depends on usage: $0.0015 per 10k operations  
+ ├─ Write operations                                           Monthly cost depends on usage: $0.015 per 10k operations   
+ ├─ List operations                                            Monthly cost depends on usage: $0.015 per 10k operations   
+ └─ Other operations                                           Monthly cost depends on usage: $0.0015 per 10k operations  
+                                                                                                                          
+ azurerm_virtual_machine.JumpStationVM1                                                                                   
+ ├─ Instance usage (Windows, pay as you go, Standard_B2s)                     730  hours                           $40.30 
+ ├─ Ultra disk reservation (if unattached)                     Monthly cost depends on usage: $5.48 per vCPU              
+ └─ storage_os_disk                                                                                                       
+    ├─ Storage (S4, LRS)                                                        1  months                           $1.69 
+    └─ Disk operations                                         Monthly cost depends on usage: $0.0005 per 10k operations  
+                                                                                                                          
+ azurerm_virtual_machine.ProductionVM1                                                                                    
+ ├─ Instance usage (Windows, pay as you go, Standard_B2s)                     730  hours                           $40.30 
+ ├─ Ultra disk reservation (if unattached)                     Monthly cost depends on usage: $5.48 per vCPU              
+ └─ storage_os_disk                                                                                                       
+    ├─ Storage (S4, LRS)                                                        1  months                           $1.69 
+    └─ Disk operations                                         Monthly cost depends on usage: $0.0005 per 10k operations  
+                                                                                                                          
+ azurerm_virtual_network_peering.ConfidentialServicesToSystem                                                             
+ ├─ Inbound data transfer                                      Monthly cost depends on usage: $0.01 per GB                
+ └─ Outbound data transfer                                     Monthly cost depends on usage: $0.01 per GB                
+                                                                                                                          
+ azurerm_virtual_network_peering.SystemToConfidentialServices                                                             
+ ├─ Inbound data transfer                                      Monthly cost depends on usage: $0.01 per GB                
+ └─ Outbound data transfer                                     Monthly cost depends on usage: $0.01 per GB                
+                                                                                                                          
+ OVERALL TOTAL                                                                                                    $103.77 
+──────────────────────────────────
+23 cloud resources were detected:
+∙ 8 were estimated, 7 of which include usage-based costs, see https://infracost.io/usage-file
+∙ 15 were free:
+  ∙ 3 x azurerm_network_security_rule
+  ∙ 3 x azurerm_subnet
+  ∙ 2 x azurerm_network_interface
+  ∙ 2 x azurerm_virtual_network
+  ∙ 1 x azurerm_backup_policy_vm
+  ∙ 1 x azurerm_backup_protected_vm
+  ∙ 1 x azurerm_key_vault
+  ∙ 1 x azurerm_network_security_group
+  ∙ 1 x azurerm_resource_group
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
+┃ Project                                            ┃ Monthly cost ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━┫
+┃ AxFrancois/AzureProjetCPE                          ┃ $104         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛

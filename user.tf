@@ -44,24 +44,24 @@ resource "azuread_user" "AF-5" {
 }
 
 resource "azuread_group" "IT" {
-  display_name = "IT"
-  security_enabled = true
-  members = [azuread_user.IT-1.id, azuread_user.IT-2.id, azuread_user.IT-3.id]
+  display_name       = "IT"
+  security_enabled   = true
+  members            = [azuread_user.IT-1.id, azuread_user.IT-2.id, azuread_user.IT-3.id]
   assignable_to_role = true
 }
 
 resource "azuread_group" "AF" {
-  display_name = "Administratif"
+  display_name     = "Administratif"
   security_enabled = true
-  members = [azuread_user.AF-4.id, azuread_user.AF-5.id]
+  members          = [azuread_user.AF-4.id, azuread_user.AF-5.id]
 }
 
-resource "azuread_directory_role" "GlobalAdmin"{
+resource "azuread_directory_role" "GlobalAdmin" {
   display_name = "Global Administrator"
 }
 
 resource "azuread_directory_role_assignment" "GlobalAdmin" {
-  role_id = azuread_directory_role.GlobalAdmin.template_id
+  role_id             = azuread_directory_role.GlobalAdmin.template_id
   principal_object_id = azuread_group.IT.id
 }
 
