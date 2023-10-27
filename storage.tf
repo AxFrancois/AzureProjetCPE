@@ -18,6 +18,7 @@ resource "azurerm_recovery_services_vault" "ConfidentialRecoveryVault" {
   location            = azurerm_resource_group.RG_CPE.location
   resource_group_name = azurerm_resource_group.RG_CPE.name
   sku                 = "Standard"
+  soft_delete_enabled = false
 }
 
 resource "azurerm_backup_policy_vm" "Production-backup-policy" {
