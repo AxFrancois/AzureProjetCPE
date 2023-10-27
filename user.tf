@@ -75,11 +75,11 @@ resource "azuread_conditional_access_policy" "AdminAccessPolicy" {
     user_risk_levels    = ["high"]
 
     applications {
-      included_applications = ["all"]
+      included_applications = ["All"]
     }
 
     locations {
-      included_locations = ["all"]
+      included_locations = ["All"]
     }
 
     platforms {
