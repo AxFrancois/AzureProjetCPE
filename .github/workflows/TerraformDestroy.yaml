@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  Plan:
+  Destroy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
