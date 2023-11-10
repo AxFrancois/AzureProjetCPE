@@ -27,7 +27,7 @@ resource "azurerm_network_security_rule" "JumpStationSecurityRule-2" {
   source_port_range           = "*"
   destination_port_range      = "*"
   source_address_prefix       = element(azurerm_virtual_network.System-network-1.address_space, 0)
-  destination_address_prefix  = element(azurerm_virtual_network.CondidentialServices-network-1.address_space, 0)
+  destination_address_prefix  = element(azurerm_virtual_network.ConfidentialServices-network-1.address_space, 0)
   resource_group_name         = azurerm_resource_group.RG_CPE.name
   network_security_group_name = azurerm_network_security_group.JumpStationSecurityGroup.name
 }
