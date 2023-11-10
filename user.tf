@@ -70,9 +70,7 @@ resource "azuread_conditional_access_policy" "AdminAccessPolicy" {
   state        = "enabled"
 
   conditions {
-    client_app_types    = ["all"]
-    sign_in_risk_levels = ["high"]
-    user_risk_levels    = ["high"]
+    client_app_types = ["all"]
 
     applications {
       included_applications = ["All"]

@@ -1,5 +1,5 @@
 variable "region" {
-  default = "France central"
+  default = "West Europe"
 }
 
 variable "tenant_id" {
@@ -16,5 +16,5 @@ variable "client_id" {
 
 variable "default_password" {
   sensitive = true
-  type = string
+  type      = string
 }

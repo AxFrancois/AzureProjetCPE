@@ -1,3 +1,4 @@
+Alexandre Drevet -- Axel François Charlot
  Name                                                                 Monthly Qty  Unit                      Monthly Cost 
                                                                                                                           
  azurerm_public_ip.PublicIP-1                                                                                             
@@ -43,12 +44,12 @@
                                                                                                                           
  azurerm_virtual_network_peering.SystemToConfidentialServices                                                             
  ├─ Inbound data transfer                                      Monthly cost depends on usage: $0.01 per GB                
- └─ Outbound data transfer                                     Monthly cost depends on usage: $0.01 per GB    
+ └─ Outbound data transfer                                     Monthly cost depends on usage: $0.01 per GB                
 
- Microsoft Entra ID
-├─ Licence Premium P2                                          Monthly cost : $9.00 per user                      $45.00
-└─ Pricing Tiers (Standard - 730 Hours)                        Monthly cost : $0.15 per hour per setup            $109.50          
-                                                                                                                          
+ Microsoft Entra ID                                                             
+ ├─ License Premium P2                                         Monthly cost: $9 per user                          $45.00           
+ └─ Azure AD Domain Services (Standard)                                       730  hours                          $109.50        
+
  OVERALL TOTAL                                                                                                    $258.27 
 ──────────────────────────────────
 23 cloud resources were detected:
@@ -67,5 +68,5 @@
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┓
 ┃ Project                                            ┃ Monthly cost ┃
 ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━┫
-┃ AxFrancois/AzureProjetCPE                          ┃ $258.27      ┃
+┃ AxFrancois/AzureProjetCPE                          ┃ $259         ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━┛
