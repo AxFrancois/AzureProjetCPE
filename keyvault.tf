@@ -10,7 +10,7 @@ resource "azurerm_key_vault" "KeyVault1" {
   sku_name = "standard"
 }
 
-resource "azurerm_key_vault_access_policy" "example" {
+resource "azurerm_key_vault_access_policy" "KeyVaultAccessPolicy1" {
   key_vault_id = azurerm_key_vault.KeyVault1.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = azuread_group.IT.id
@@ -32,7 +32,7 @@ resource "azurerm_key_vault_access_policy" "example" {
   ]
 }
 
-resource "azurerm_key_vault_access_policy" "example" {
+resource "azurerm_key_vault_access_policy" "KeyVaultAccessPolicy2" {
   key_vault_id = azurerm_key_vault.KeyVault1.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = azuread_group.AF.id
