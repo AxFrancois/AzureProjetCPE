@@ -8,21 +8,44 @@ resource "azurerm_key_vault" "KeyVault1" {
   purge_protection_enabled    = false
 
   sku_name = "standard"
+}
 
-  access_policy {
-    tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id = data.azurerm_client_config.current.object_id
+resource "azurerm_key_vault_access_policy" "example" {
+  key_vault_id = azurerm_key_vault.KeyVault1.id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = azuread_group.IT.id
 
-    key_permissions = [
-      "Get",
-    ]
+  certificate_permissions = [
+    "Get", "List", "Delete", "Create", "Import", "Update", "ManageContacts", "GetIssuers", "ListIssuers", "SetIssuers", "DeleteIssuers", "ManageIssuers", "Recover", "Purge"
+  ]
 
-    secret_permissions = [
-      "Get",
-    ]
+  key_permissions = [
+    "Get", "List", "Create", "Delete", "Recover", "Backup", "Restore", "UnwrapKey", "WrapKey", "Encrypt", "Decrypt", "Import", "Update"
+  ]
 
-    storage_permissions = [
-      "Get",
-    ]
-  }
+  secret_permissions = [
+    "Get", "List", "Set", "Delete", "Recover", "Backup", "Restore"
+  ]
+
+  storage_permissions = [
+    "Get", "List", "Delete", "Recover", "Backup", "Restore", "RegenerateKey", "Set", "Update"
+  ]
+}
+
+resource "azurerm_key_vault_access_policy" "example" {
+  key_vault_id = azurerm_key_vault.KeyVault1.id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = azuread_group.AF.id
+
+  key_permissions = [
+    "Get", "List", "Set"
+  ]
+
+  secret_permissions = [
+    "Get", "List", "Set"
+  ]
+
+  storage_permissions = [
+    "Get", "List", "Set"
+  ]
 }

@@ -39,6 +39,7 @@ resource "azurerm_subnet" "CondidentialServices-network-1-subnet-1" {
   resource_group_name  = azurerm_resource_group.RG_CPE.name
   virtual_network_name = azurerm_virtual_network.CondidentialServices-network-1.name
   address_prefixes     = ["10.0.0.0/16"]
+  service_endpoints    = ["Microsoft.Storage"]
 }
 
 resource "azurerm_virtual_network_peering" "SystemToConfidentialServices" {

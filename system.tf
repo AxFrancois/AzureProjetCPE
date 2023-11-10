@@ -41,7 +41,7 @@ resource "azurerm_virtual_machine" "JumpStationVM1" {
   os_profile {
     computer_name  = "JumpStationVM1"
     admin_username = "testadmin"
-    admin_password = "Password1234!"
+    admin_password = var.default_password
   }
 
   os_profile_windows_config {

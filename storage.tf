@@ -4,7 +4,15 @@ resource "azurerm_storage_account" "ConfidentielStorageAccount" {
   location                 = azurerm_resource_group.RG_CPE.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
-  #public_network_access_enabled = false
+
+  # network_rules {
+  #   default_action = "Deny"
+  #   virtual_network_subnet_ids = [ azurerm_subnet.System-network-1-subnet-1 ]
+  # }
+
+  tags = {
+    environment = "ConfidentialServices"
+  }
 }
 
 resource "azurerm_storage_share" "ConfidentialServices-share-1" {

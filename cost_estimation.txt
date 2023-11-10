@@ -1,5 +1,7 @@
 Project: AxFrancois/AzureProjetCPE
 
+## Rajouter prix licence Aure AD Premium P2
+
  Name                                                                 Monthly Qty  Unit                      Monthly Cost 
                                                                                                                           
  azurerm_public_ip.PublicIP-1                                                                                             
