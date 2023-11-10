@@ -38,7 +38,7 @@ resource "azurerm_key_vault_access_policy" "KeyVaultAccessPolicy2" {
   object_id    = azuread_group.AF.id
 
   key_permissions = [
-    "Get", "List", "Set"
+    "Get", "List", "Create"
   ]
 
   secret_permissions = [
