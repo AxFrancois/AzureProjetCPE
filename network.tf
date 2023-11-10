@@ -23,21 +23,21 @@ resource "azurerm_subnet" "System-network-1-subnet-2" {
   address_prefixes     = ["192.168.0.128/25"]
 }
 
-resource "azurerm_virtual_network" "CondidentialServices-network-1" {
-  name                = "CondidentialServices-network-1"
+resource "azurerm_virtual_network" "ConfidentialServices-network-1" {
+  name                = "ConfidentialServices-network-1"
   location            = azurerm_resource_group.RG_CPE.location
   resource_group_name = azurerm_resource_group.RG_CPE.name
   address_space       = ["10.0.0.0/16"]
 
   tags = {
-    environment = "CondidentialServices"
+    environment = "ConfidentialServices"
   }
 }
 
-resource "azurerm_subnet" "CondidentialServices-network-1-subnet-1" {
-  name                 = "CondidentialServices-network-1-subnet-1"
+resource "azurerm_subnet" "ConfidentialServices-network-1-subnet-1" {
+  name                 = "ConfidentialServices-network-1-subnet-1"
   resource_group_name  = azurerm_resource_group.RG_CPE.name
-  virtual_network_name = azurerm_virtual_network.CondidentialServices-network-1.name
+  virtual_network_name = azurerm_virtual_network.ConfidentialServices-network-1.name
   address_prefixes     = ["10.0.0.0/16"]
 }
 
@@ -45,13 +45,13 @@ resource "azurerm_virtual_network_peering" "SystemToConfidentialServices" {
   name                      = "SystemToConfidentialServices"
   resource_group_name       = azurerm_resource_group.RG_CPE.name
   virtual_network_name      = azurerm_virtual_network.System-network-1.name
-  remote_virtual_network_id = azurerm_virtual_network.CondidentialServices-network-1.id
+  remote_virtual_network_id = azurerm_virtual_network.ConfidentialServices-network-1.id
 }
 
 resource "azurerm_virtual_network_peering" "ConfidentialServicesToSystem" {
   name                      = "ConfidentialServicesToSystem"
   resource_group_name       = azurerm_resource_group.RG_CPE.name
-  virtual_network_name      = azurerm_virtual_network.CondidentialServices-network-1.name
+  virtual_network_name      = azurerm_virtual_network.ConfidentialServices-network-1.name
   remote_virtual_network_id = azurerm_virtual_network.System-network-1.id
 }
 
