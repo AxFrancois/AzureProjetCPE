@@ -13,3 +13,8 @@ variable "subscription_id" {
 variable "client_id" {
   default = "88b89f8b-ffc6-4d7a-8d6e-1e59338c6844"
 }
+
+variable "default_password" {
+  sensitive = true
+  type = string
+}

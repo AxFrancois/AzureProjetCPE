@@ -60,7 +60,7 @@ resource "azurerm_network_interface" "ProductionVM1-NIC" {
 
   ip_configuration {
     name                          = "PrimaryIP"
-    subnet_id                     = azurerm_subnet.CondidentialServices-network-1-subnet-1.id
+    subnet_id                     = azurerm_subnet.ConfidentialServices-network-1-subnet-1.id
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -95,7 +95,7 @@ resource "azurerm_virtual_machine" "ProductionVM1" {
   os_profile {
     computer_name  = "ProductionVM1"
     admin_username = "testadmin"
-    admin_password = "Password1234!"
+    admin_password = var.default_password
   }
 
   os_profile_windows_config {
@@ -103,6 +103,6 @@ resource "azurerm_virtual_machine" "ProductionVM1" {
   }
 
   tags = {
-    environment = "System"
+    environment = "ConfidentialServices"
   }
 }
