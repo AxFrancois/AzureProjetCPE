@@ -10,6 +10,7 @@ terraform {
       version = "~> 2.43.0"
     }
   }
+  
   backend "azurerm" {
     resource_group_name  = "AxFrancois_CPE"
     storage_account_name = "tfstate909487376"
